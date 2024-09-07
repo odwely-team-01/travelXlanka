@@ -4,6 +4,20 @@ module.exports = {
     es2021: true,
     node: true,
   },
+  ignorePatterns: [
+    'node_modules/',
+    'dist/',
+    'build/',
+    'public/',
+    'static/',
+    '*.d.ts',
+    'tailwind.config.js',
+    'webpack.config.js',
+    '.env',
+    '.eslintcache',
+    'coverage/',
+    'reports/',
+  ],
   extends: [
     'airbnb',
     'airbnb/hooks',
@@ -55,6 +69,7 @@ module.exports = {
     // Tailwind specific rule
     'tailwindcss/classnames-order': 'warn',
     'tailwindcss/migration-from-tailwind-2': 'off',
+    'tailwindcss/no-custom-classname': 'off',
 
     // Import sorting
     'simple-import-sort/imports': 'error',
@@ -63,7 +78,7 @@ module.exports = {
     // Additional rules as per preference
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
-    "react/button-has-type": "off"
+    'react/button-has-type': 'off',
   },
   settings: {
     react: {
