@@ -1,9 +1,7 @@
-import React from 'react'
+import React from 'react';
 
-const Tour = () => {
-  return (
-    <div>Tour</div>
-  )
+function Tour() {
+  return <div>Tour</div>;
 }
 
-export default Tour
+export default Tour;

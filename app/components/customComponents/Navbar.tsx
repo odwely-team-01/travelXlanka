@@ -1,10 +1,11 @@
 // components/Navbar.tsx
-"use client";
 
-import { useState } from "react";
-import { FaBars, FaTimes } from "react-icons/fa";
+'use client';
 
-const Navbar = () => {
+import { useState } from 'react';
+import { FaBars, FaTimes } from 'react-icons/fa';
+
+function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -12,36 +13,36 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-transparent absolute top-0 left-0 w-full z-10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+    <nav className="absolute left-0 top-0 z-10 w-full bg-transparent">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
             <div className="text-2xl font-bold text-red-900">
               Travel X Lanka
             </div>
           </div>
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden space-x-8 md:flex">
             <a
               href="/"
-              className=" hover:text-gray-300 transition duration-300"
+              className=" transition duration-300 hover:text-gray-300"
             >
               Home
             </a>
             <a
               href="/about"
-              className="text-black hover:text-gray-300 transition duration-300"
+              className="text-black transition duration-300 hover:text-gray-300"
             >
               About
             </a>
             <a
               href="/tour"
-              className="text-black hover:text-gray-300 transition duration-300"
+              className="text-black transition duration-300 hover:text-gray-300"
             >
               Tour
             </a>
             <a
               href="/contact"
-              className="text-black hover:text-gray-300 transition duration-300"
+              className="text-black transition duration-300 hover:text-gray-300"
             >
               Contact
             </a>
@@ -55,29 +56,29 @@ const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-black bg-opacity-70">
-          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+        <div className="bg-black/70 md:hidden">
+          <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
             <a
               href="/"
-              className="block text-black hover:text-gray-300 transition duration-300"
+              className="block text-black transition duration-300 hover:text-gray-300"
             >
               Home
             </a>
             <a
               href="/about"
-              className="block text-black hover:text-gray-300 transition duration-300"
+              className="block text-black transition duration-300 hover:text-gray-300"
             >
               About
             </a>
             <a
               href="/tour"
-              className="block text-black hover:text-gray-300 transition duration-300"
+              className="block text-black transition duration-300 hover:text-gray-300"
             >
               Tour
             </a>
             <a
               href="/contact"
-              className="block text-black hover:text-gray-300 transition duration-300"
+              className="block text-black transition duration-300 hover:text-gray-300"
             >
               Contact
             </a>
@@ -86,6 +87,6 @@ const Navbar = () => {
       )}
     </nav>
   );
-};
+}
 
 export default Navbar;
