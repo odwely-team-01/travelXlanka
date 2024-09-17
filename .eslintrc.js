@@ -65,9 +65,20 @@ module.exports = {
         tsx: 'never',
       },
     ],
+    // Function component definitions rule: allow both arrow and function components
+    'react/function-component-definition': [
+      'error',
+      {
+        namedComponents: 'arrow-function',
+        unnamedComponents: 'function-declaration',
+      },
+    ],
+    
+    // Avoid using array index as key in JSX
+    'react/no-array-index-key': 'warn',
 
     // Tailwind specific rule
-    'tailwindcss/classnames-order': 'warn',
+    'tailwindcss/classnames-order': 'warn', // Warn on improper Tailwind order
     'tailwindcss/migration-from-tailwind-2': 'off',
     'tailwindcss/no-custom-classname': 'off',
 
@@ -79,6 +90,12 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': ['error'],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
     'react/button-has-type': 'off',
+
+    // Enforce curly braces for JSX only when necessary
+    'react/jsx-curly-brace-presence': [
+      'error',
+      { props: 'never', children: 'never' },
+    ],
   },
   settings: {
     react: {
