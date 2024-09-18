@@ -14,7 +14,7 @@ export default function Home() {
             />
 
             <span className="flex w-full flex-col items-center justify-center text-white">
-              <h1 className="font-poppins text-5xl font-bold">
+              <h1 className="text-center font-poppins text-3xl font-bold sm:text-4xl lg:text-5xl ">
                 Welcome to Travel X Lanka
               </h1>
               <p className="mt-4">Explore the beauty of with us</p>
