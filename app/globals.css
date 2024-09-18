@@ -8,3 +8,12 @@
 html {
   font-family: 'Poppins', sans-serif;
 }
+
+
+.tour-bg{
+  background-image: url('../public/contact-us/bg_5.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+}
