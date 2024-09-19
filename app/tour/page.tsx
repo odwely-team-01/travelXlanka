@@ -4,6 +4,7 @@ import React from 'react';
 import { FaRegStar } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
 import TourCard from '../components/customComponents/tour/TourCard';
+import GuiderCard from '../components/customComponents/guider/GuiderCard';
 
 function Tour() {
   return (
@@ -30,8 +31,11 @@ function Tour() {
 
       {/* description card section */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 my-10 px-4">
+        
         {/* left */}
-        <div className="w-full border">{/* form section here */}</div>
+        <div className="w-full border">
+        <GuiderCard />
+        </div>
 
         {/* right */}
         <div className="lg:col-span-3 w-full   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
