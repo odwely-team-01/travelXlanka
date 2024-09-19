@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import HomeBG from '@/public/contact-us/bg_5.jpg';
 
 export default function Home() {
   return (
@@ -7,7 +8,7 @@ export default function Home() {
         <section className="flex h-screen w-full flex-col  items-center justify-center">
           <div className="flex h-screen w-full items-center justify-center">
             <Image
-              src="/contact-us/bg_5.jpg"
+              src={HomeBG}
               alt="contact-us"
               layout="fill"
               className="absolute -z-10 size-full object-cover"
