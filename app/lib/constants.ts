@@ -57,3 +57,37 @@ export const ACORDIANITEMS = [
   },
 ];
 
+
+
+export const toursCardData = [
+  {
+    title: "2 Days Sigiriya",
+    price: 2,
+    hashtags: ['Sigiriya', 'Dambulla'],
+    duration: "2 days 3 nights",
+    imageSrc: "/tour/sigiriya.png",
+    rating: 4.5,
+    description: "Climb Sigiriya Rock, Climb Pidurangala mountain, Minneriya National Park Safari, Ayurvedic Spa, Golden Temple in Dambulla, Pinnawala Elephant Orphanage",
+    numOfShare: '1K',
+  },
+  {
+    title: "3 Days Kandy",
+    price: 3,
+    hashtags: ['Kandy', 'Temple of the Tooth'],
+    duration: "3 days 2 nights",
+    imageSrc: "/tour/sigiriya.png",
+    rating: 4.7,
+    description: "Visit the Temple of the Tooth, Kandy Lake, Royal Botanical Gardens, cultural dance show, and tea plantations.",
+    numOfShare: '500',
+  },
+  {
+    title: "5 Days South Coast",
+    price: 5,
+    hashtags: ['Galle', 'Mirissa', 'Unawatuna'],
+    duration: "5 days 4 nights",
+    imageSrc: "/tour/sigiriya.png",
+    rating: 4.8,
+    description: "Explore Galle Fort, Whale watching in Mirissa, Unawatuna beach, and turtle hatcheries along the coast.",
+    numOfShare: '2K',
+  },
+];

@@ -93,7 +93,7 @@ const TourCard = ({
             ))}
           </span>
 
-          <button className="rounded-lg bg-[#2F89FC] py-2 px-5 text-white transition duration-150 hover:bg-[#acff4d] hover:text-[#696969]">
+          <button className="rounded-lg bg-[#2F89FC] py-2 px-5 text-white transition duration-150 hover:bg-[#68a0e9] hover:text-[#696969]">
             Discover
           </button>
         </div>
