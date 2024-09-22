@@ -15,14 +15,26 @@ interface AboutInfoItem {
 
 function About() {
   const [activeButton, setActiveButton] = useState<AboutInfoItem>(ABOUTINFO[0]);
-  const [openIndex, setOpenIndex] = useState(null);
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [fadeState, setFadeState] = useState<'fade-in' | 'fade-out'>('fade-in');
+  const [previousContent, setPreviousContent] = useState<AboutInfoItem | null>(
+    null,
+  );
 
-  const handleClick = (index: any) => {
+  const handleClick = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
   const handleButtonClick = (button: AboutInfoItem) => {
-    setActiveButton(button);
+    if (activeButton !== button) {
+      setFadeState('fade-out');
+      setPreviousContent(activeButton);
+      setTimeout(() => {
+        setActiveButton(button);
+        setFadeState('fade-in');
+        setPreviousContent(null);
+      }, 300);
+    }
   };
 
   const isActive = (button: AboutInfoItem) => activeButton === button;
@@ -62,7 +74,7 @@ function About() {
                 <button
                   key={info.title}
                   onClick={() => handleButtonClick(info)}
-                  className={` text-sm lg:text-lg ${
+                  className={` text-sm lg:text-lg transition-all duration-500 ease-in-out ${
                     isActive(info)
                       ? 'rounded-full bg-[#78d5ef] h-12 w-28 text-white hover:text-white'
                       : 'rounded-3xl text-gray-400 h-12 w-28 hover:text-black'
@@ -73,9 +85,26 @@ function About() {
               ))}
             </div>
 
-            <div>
-              <h1 className="mb-6 text-2xl">{activeButton.subTitle}</h1>
-              <p className="text-base">{activeButton.content}</p>
+            <div className="relative">
+              {previousContent && (
+                <div
+                  className={`absolute inset-0 transition-opacity duration-500 ease-out opacity-0`}
+                  key={previousContent.title}
+                >
+                  <h1 className="mb-6 text-2xl">{previousContent.subTitle}</h1>
+                  <p className="text-base">{previousContent.content}</p>
+                </div>
+              )}
+
+              <div
+                className={`transition-opacity duration-500 ease-out ${
+                  fadeState === 'fade-in' ? 'opacity-100' : 'opacity-0'
+                }`}
+                key={activeButton.title}
+              >
+                <h1 className="mb-6 text-2xl">{activeButton.subTitle}</h1>
+                <p className="text-base">{activeButton.content}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -89,7 +118,7 @@ function About() {
             Ask Question
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 w-full max-w-7xl mx-auto px-7 md:px-16 xl:px-20 pb-12">
+        <div className="flex flex-col gap-4 max-w-7xl mx-auto px-7 md:px-16 xl:px-20 pb-12">
           {ACORDIANITEMS.map((item, index) => (
             <AccordionItem
               key={index}
