@@ -34,7 +34,15 @@ const AccordionItem = ({
         onClick={onClick}
       >
         <h3 className="font-medium text-lg">{title}</h3>
-        <span className="text-green-500 text-2xl">{isOpen ? '-' : '+'}</span>
+        <div className="h-5 w-5 p-1 bg-green-500 flex items-center justify-center rounded-full">
+          <span className="text-white text-2xl">
+            {isOpen ? (
+              <span className="flex -translate-y-[2px]">-</span>
+            ) : (
+              <span>+</span>
+            )}
+          </span>
+        </div>
       </div>
       <div
         className="overflow-hidden transition-all duration-500 ease-in-out"
