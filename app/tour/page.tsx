@@ -4,6 +4,10 @@ import React from 'react';
 import { FaRegStar } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
 import TourCard from '../components/customComponents/tour/TourCard';
+import { toursCardData } from '../lib/constants';
+import InputText from '../components/customComponents/tour/InputText';
+import DateInput from '../components/customComponents/tour/DateInput';
+import InputSelect from '../components/customComponents/tour/inputSelect';
 
 function Tour() {
   return (
@@ -31,59 +35,33 @@ function Tour() {
       {/* description card section */}
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 my-10 px-4">
         {/* left */}
-        <div className="w-full border">{/* form section here */}</div>
+        <div className="w-full ">
+          {/* form section here */}
+          <div className="p-5 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
+            <span className="uppercase md:text-lg">Find Destination</span>
+            <InputText placeholder='Destination, City'/>
+            <InputSelect/>
+            <DateInput placeholder='FROM DATE'/>
+            <DateInput placeholder='TO DATE'/>
+          </div>
+        </div>
 
         {/* right */}
         <div className="lg:col-span-3 w-full   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
           {/* card sections here */}
-
-          <TourCard
-            title="2 Days Sigiriya"
-            price={2}
-            hashtags={['Sigiriya', 'Dambulla']}
-            duration="2 days 3 nights"
-            imageSrc="/tour/sigiriya.png"
-            rating={4.5}
-            description=" Climb Sigiriya Rock, Climb Pidurangala mountain, Minneriya
-                  National Park Safari, Ayurvedic Spa, Golden Temple in
-                  Dambulla, Pinnawala Elephant Orphanage"
-          />
-
-          <TourCard
-            title="2 Days Sigiriya"
-            price={2}
-            hashtags={['Sigiriya', 'Dambulla']}
-            duration="2 days 3 nights"
-            imageSrc="/tour/sigiriya.png"
-            rating={4.5}
-            description=" Climb Sigiriya Rock, Climb Pidurangala mountain, Minneriya
-                  National Park Safari, Ayurvedic Spa, Golden Temple in
-                  Dambulla, Pinnawala Elephant Orphanage"
-          />
-
-          <TourCard
-            title="2 Days Sigiriya"
-            price={2}
-            hashtags={['Sigiriya', 'Dambulla']}
-            duration="2 days 3 nights"
-            imageSrc="/tour/sigiriya.png"
-            rating={4.5}
-            description=" Climb Sigiriya Rock, Climb Pidurangala mountain, Minneriya
-                  National Park Safari, Ayurvedic Spa, Golden Temple in
-                  Dambulla, Pinnawala Elephant Orphanage"
-          />
-
-          <TourCard
-            title="2 Days Sigiriya"
-            price={2}
-            hashtags={['Sigiriya', 'Dambulla']}
-            duration="2 days 3 nights"
-            imageSrc="/tour/sigiriya.png"
-            rating={4.5}
-            description=" Climb Sigiriya Rock, Climb Pidurangala mountain, Minneriya
-                  National Park Safari, Ayurvedic Spa, Golden Temple in
-                  Dambulla, Pinnawala Elephant Orphanage"
-          />
+          {toursCardData?.map((tour, index) => (
+            <TourCard
+              key={index}
+              title={tour.title}
+              price={tour.price}
+              hashtags={tour.hashtags}
+              duration={tour.duration}
+              imageSrc={tour.imageSrc}
+              rating={tour.rating}
+              description={tour.description}
+              numOfShare={tour.numOfShare}
+            />
+          ))}
         </div>
       </div>
     </div>
