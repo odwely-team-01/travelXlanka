@@ -7,6 +7,7 @@ import Banner from '@/app/components/customComponents/home/Banner';
 import BannerBg from '@/public/homeBanner.jpg';
 import WhyChooseUs from './components/customComponents/home/WhyChooseUs';
 import HomeHeroCards from './components/customComponents/home/HomeHeroCards';
+import FeatureCard from './components/customComponents/home/FeatureCard';
 
 export default function Home() {
   return (
@@ -24,7 +25,7 @@ export default function Home() {
         // backgroundImage={BannerBg}
       />
 
-      <div className="w-full flex justify-center bg-[#f8f9fa] pb-10">
+      <div className="w-full flex justify-center bg-[#f8f9fa] pb-10 ">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 relative bottom-12 gap-5 lg:gap-10 px-8 max-w-[1140px]">
           <HomeHeroCards
             imageSrc="/icons/guarantee.png"
@@ -49,8 +50,23 @@ export default function Home() {
         </div>
       </div>
 
-      <div className=''>
+      <div className="w-full flex justify-center border bg-[#f8f9fa]">
+        <div className="flex text-black flex-col max-w-[1140px] justify-start w-full gap-5">
+          <p>Featured</p>
+          <span className="flex flex-row items-end">
+            <p className="text-2xl font-bold">Featured</p>
+            <p>Destination</p>
+          </span>
+          <div className="flex flex-row gap-6">
+            <FeatureCard />
+            <FeatureCard />
 
+            <FeatureCard />
+
+            <FeatureCard />
+
+          </div>
+        </div>
       </div>
 
       <div>
