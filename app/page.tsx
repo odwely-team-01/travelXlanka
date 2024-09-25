@@ -9,7 +9,42 @@ import WhyChooseUs from './components/customComponents/home/WhyChooseUs';
 import HomeHeroCards from './components/customComponents/home/HomeHeroCards';
 import FeatureCard from './components/customComponents/home/FeatureCard';
 
+
+
+interface FeatureData {
+  imageSrc: string;
+  title: string;
+  description: string;
+}
+
 export default function Home() {
+
+
+  const featureData: FeatureData[] = [
+    {
+      imageSrc: '/feature/destination-1.jpg',
+      title: 'Galle, Light House',
+      description: 'Spiritual heart',
+    },
+    {
+      imageSrc: '/feature/destination-4.jpg',
+      title: 'Waligama',
+      description: 'Surfing paradise',
+    },
+    {
+      imageSrc: '/feature/destination-2.jpg',
+      title: 'GYala, National Park',
+      description: 'Unforgettable safari adventures',
+    },
+    {
+      imageSrc: '/feature/destination-3.jpg',
+      title: 'Kandy, Temple of tooth',
+      description: 'Spiritual heart',
+    },
+  ];
+
+
+
   return (
     <>
       <div className="flex w-full flex-col items-center justify-center"></div>
@@ -48,26 +83,27 @@ export default function Home() {
             description="From booking to beyond, our team is here to ensure your journey is seamless and stress-free."
           />
         </div>
-      </div>
-
-      <div className="w-full flex justify-center border bg-[#f8f9fa]">
-        <div className="flex text-black flex-col max-w-[1140px] justify-start w-full gap-5">
-          <p>Featured</p>
-          <span className="flex flex-row items-end">
-            <p className="text-2xl font-bold">Featured</p>
-            <p>Destination</p>
-          </span>
-          <div className="flex flex-row gap-6">
-            <FeatureCard />
-            <FeatureCard />
-
-            <FeatureCard />
-
-            <FeatureCard />
-
-          </div>
+      </div><div className="w-full flex justify-center border bg-[#f8f9fa]">
+      <div className="flex text-black flex-col max-w-[1140px] justify-start w-full gap-5">
+        <p>Featured</p>
+        <span className="flex flex-row items-end">
+          <p className="text-2xl font-bold">Featured</p>
+          <p>Destination</p>
+        </span>
+        <div className="flex flex-row gap-6">
+          {featureData.map((feature, index) => (
+            <FeatureCard
+              key={index}
+              imageSrc={feature.imageSrc}
+              title={feature.title}
+              description={feature.description}
+            />
+          ))}
         </div>
       </div>
+    </div>
+
+      
 
       <div>
         <WhyChooseUs
