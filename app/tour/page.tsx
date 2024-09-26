@@ -29,7 +29,6 @@ function Tour() {
     setSelectedLocation(event.target.value);
   };
 
-
   // pagination
   const [currentPage, setCurrentPage] = useState(1);
   const totalPages = 5; // Total number of pages you want
@@ -37,7 +36,6 @@ function Tour() {
   const handlePageChange = (page: number) => {
     setCurrentPage(page);
   };
-
 
   return (
     <div className="flex flex-col">
@@ -62,64 +60,67 @@ function Tour() {
       </div>
 
       {/* description card section */}
-      <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 my-10 px-4">
-        {/* left */}
-        <div className="w-full flex flex-col gap-5 ">
-          {/* form section here */}
-          <div className="p-5 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
-            <span className="uppercase md:text-lg">Find Destination</span>
-            <InputText placeholder="Destination, City" />
-            <LocationSelect
-              locations={locations}
-              name="locationSelect"
-              id="locationSelect"
-              value={selectedLocation}
-              onChange={handleChange}
-              placeholder="Choose a location"
-              className="w-full"
-            />
-            <DateInput placeholder="FROM DATE" />
-            <DateInput placeholder="TO DATE" />
+      <div className='max-w-[1140px] w-full mx-auto flex items-center justify-center'>
+        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 my-10 px-4 ">
+          {/* left */}
+          <div className="w-full flex flex-col gap-5 ">
+            {/* form section here */}
+            <div className="p-5 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
+              <span className="uppercase md:text-lg">Find Destination</span>
+              <InputText placeholder="Destination, City" />
+              <LocationSelect
+                locations={locations}
+                name="locationSelect"
+                id="locationSelect"
+                value={selectedLocation}
+                onChange={handleChange}
+                placeholder="Choose a location"
+                className="w-full"
+              />
+              <DateInput placeholder="FROM DATE" />
+              <DateInput placeholder="TO DATE" />
 
-            <ButtonSection text="Search" />
+              <ButtonSection text="Search" />
+            </div>
+
+            {/* rating section */}
+            <div className="p-5 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
+              <span className="uppercase md:text-lg">Start Rating</span>
+              <RatingSection />
+              <RatingSection />
+              <RatingSection />
+              <RatingSection />
+              <RatingSection />
+            </div>
           </div>
 
-          {/* rating section */}
-          <div className="p-5 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
-            <span className="uppercase md:text-lg">Start Rating</span>
-            <RatingSection/>
-            <RatingSection/>
-            <RatingSection/>
-            <RatingSection/>
-            <RatingSection/>
+          {/* right */}
+          <div className="lg:col-span-3 w-full   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            {/* card sections here */}
+            {toursCardData?.map((tour, index) => (
+              <TourCard
+                key={index}
+                title={tour.title}
+                price={tour.price}
+                hashtags={tour.hashtags}
+                duration={tour.duration}
+                imageSrc={tour.imageSrc}
+                rating={tour.rating}
+                description={tour.description}
+                numOfShare={tour.numOfShare}
+              />
+            ))}
           </div>
-        </div>
-
-        {/* right */}
-        <div className="lg:col-span-3 w-full   grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-          {/* card sections here */}
-          {toursCardData?.map((tour, index) => (
-            <TourCard
-              key={index}
-              title={tour.title}
-              price={tour.price}
-              hashtags={tour.hashtags}
-              duration={tour.duration}
-              imageSrc={tour.imageSrc}
-              rating={tour.rating}
-              description={tour.description}
-              numOfShare={tour.numOfShare}
-            />
-          ))}
         </div>
       </div>
 
-      <div className='flex items-center justify-center w-full py-5'>
-      <Pagination   totalPages={totalPages}
-        currentPage={currentPage}
-        onPageChange={handlePageChange} />
+      <div className="flex items-center justify-center w-full py-5">
+        <Pagination
+          totalPages={totalPages}
+          currentPage={currentPage}
+          onPageChange={handlePageChange}
+        />
       </div>
-    
     </div>
   );
 }
