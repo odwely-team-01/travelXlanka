@@ -5,6 +5,7 @@ import React, { useState } from 'react';
 
 import { ABOUTINFO, ACORDIANITEMS } from '@/app/lib/constants';
 import AccordionItem from '@/app/components/AccordianItem';
+import Link from 'next/link';
 
 interface AboutInfoItem {
   title: string;
@@ -14,7 +15,7 @@ interface AboutInfoItem {
 
 const About: React.FC = () => {
   const [activeButton, setActiveButton] = useState<AboutInfoItem>(ABOUTINFO[0]);
-  const [activeIndex, setActiveIndex] = useState<number | null>(null); // Single state to track the active accordion item
+  const [activeIndex, setActiveIndex] = useState<number | null>(null);
   const [fadeState, setFadeState] = useState<'fade-in' | 'fade-out'>('fade-in');
   const [previousContent, setPreviousContent] = useState<AboutInfoItem | null>(
     null,
@@ -51,11 +52,21 @@ const About: React.FC = () => {
           layout="fill"
           className="absolute -z-10 size-full object-cover"
         />
-        <span className="flex w-full flex-col items-center justify-center text-white">
-          <h1 className="text-center font-poppins text-3xl font-bold md:text-4xl lg:text-5xl">
-            Welcome to Travel X Lanka
+        <span className="flex w-full flex-col items-center justify-center text-white gap-4">
+          <div className="flex items-center justify-center gap-4">
+            <Link className="text-xs md:text-sm font-normal border-b-2 border-white/30" href={'/'}>
+              HOME
+            </Link>
+            <Link
+              className="text-xs md:text-sm font-normal opacity-80 border-b-2 border-white/30"
+              href={'/about'}
+            >
+              ABOUT
+            </Link>
+          </div>
+          <h1 className="font-poppins text-4xl md:text-5xl xl:text-6xl font-bold">
+            About Us
           </h1>
-          <p className="mt-4">Explore the beauty with us</p>
         </span>
       </div>
 
