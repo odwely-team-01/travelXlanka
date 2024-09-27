@@ -2,6 +2,7 @@
 
 'use client';
 
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { FaBars, FaTimes } from 'react-icons/fa';
 
@@ -41,7 +42,7 @@ function Navbar() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="flex items-center">
-            <div className="text-2xl font-bold">Travel X Lanka</div>
+            <Link className="text-2xl font-bold" href={'/'}>Travel X Lanka</Link>
           </div>
           <div className="hidden space-x-8 md:flex">
             <a href="/" className="transition duration-300 hover:text-gray-600">

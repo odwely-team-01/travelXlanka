@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 
 export default function Footer() {
@@ -10,7 +11,7 @@ export default function Footer() {
             <div className="flex items-center space-x-3">
               {/* Add your logo here */}
               {/* <Image src="/sample-logo.png" width={50} height={50} alt="Logo" /> */}
-              <h1 className="text-3xl font-bold">Travel X Sri Lanka</h1>
+              <Link className="text-3xl font-bold" href={'/'}>Travel X Sri Lanka</Link>
             </div>
             <p className="mt-6 text-sm leading-relaxed sm:text-base 2xl:text-xl">
               Explore Sri Lanka with ease. Plan, discover, and experience your
