@@ -1,9 +1,18 @@
 // app/layout.tsx
 
 import './globals.css';
-
+import { Poppins } from 'next/font/google';
 import Footer from './components/customComponents/Footer';
 import Navbar from './components/customComponents/Navbar';
+
+
+const poppins = Poppins({
+  subsets: ['latin'],
+  display: 'swap',
+  variable: '--font-poppins',
+  weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900']
+});
+
 
 export const metadata = {
   title: 'travelXlanka - Explore Sri Lanka',
@@ -26,6 +35,7 @@ export const metadata = {
   },
 };
 
+
 export default function RootLayout({
   children,
 }: {
@@ -33,7 +43,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body>
+      <body className={poppins.className}>
         <Navbar />
         <main>{children}</main>
         <Footer />

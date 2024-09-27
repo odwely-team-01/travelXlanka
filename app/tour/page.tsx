@@ -42,12 +42,12 @@ function Tour() {
       {/* main secion with bg */}
       <div className=" min-h-screen h-auto flex flex-col items-center justify-center tour-bg">
         <div className="flex flex-col text-white gap-3">
-          <div className="flex items-center justify-center gap-2 ">
-            <Link className="text-xs md:text-sm font-bold" href={'/'}>
+          <div className="flex items-center justify-center gap-4">
+            <Link className="text-xs md:text-sm font-normal border-b-2 border-white/30" href={'/'}>
               HOME
             </Link>
             <Link
-              className="text-xs md:text-sm font-bold opacity-80"
+              className="text-xs md:text-sm font-normal border-b-2 border-white/30"
               href={'/tour'}
             >
               TOUR

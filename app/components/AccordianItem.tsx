@@ -36,11 +36,7 @@ const AccordionItem = ({
         <h3 className="font-medium text-lg">{title}</h3>
         <div className="h-5 w-5 p-1 bg-green-500 flex items-center justify-center rounded-full">
           <span className="text-white text-2xl">
-            {isOpen ? (
-              <span className="flex -translate-y-[2px]">-</span>
-            ) : (
-              <span>+</span>
-            )}
+            {isOpen ? <span>-</span> : <span>+</span>}
           </span>
         </div>
       </div>
