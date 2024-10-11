@@ -90,4 +90,15 @@ export const toursCardData = [
     description: "Explore Galle Fort, Whale watching in Mirissa, Unawatuna beach, and turtle hatcheries along the coast.",
     numOfShare: '2K',
   },
+  {
+    title: "5 Days South Coast",
+    price: 5,
+    hashtags: ['Galle', 'Mirissa', 'Unawatuna'],
+    duration: "5 days 4 nights",
+    imageSrc: "/tour/sigiriya.png",
+    rating: 4.8,
+    description: "Explore Galle Fort, Whale watching in Mirissa, Unawatuna beach, and turtle hatcheries along the coast.",
+    numOfShare: '2K',
+  }
+  
 ];

@@ -8,7 +8,8 @@ import BannerBg from '@/public/homeBanner.jpg';
 import WhyChooseUs from './components/customComponents/home/WhyChooseUs';
 import HomeHeroCards from './components/customComponents/home/HomeHeroCards';
 import FeatureCard from './components/customComponents/home/FeatureCard';
-
+import { toursCardData } from './lib/constants';
+import TourCard from './components/customComponents/tour/TourCard';
 
 
 interface FeatureData {
@@ -18,8 +19,6 @@ interface FeatureData {
 }
 
 export default function Home() {
-
-
   const featureData: FeatureData[] = [
     {
       imageSrc: '/feature/destination-1.jpg',
@@ -42,8 +41,6 @@ export default function Home() {
       description: 'Spiritual heart',
     },
   ];
-
-
 
   return (
     <>
@@ -83,27 +80,54 @@ export default function Home() {
             description="From booking to beyond, our team is here to ensure your journey is seamless and stress-free."
           />
         </div>
-      </div><div className="w-full flex justify-center border bg-[#f8f9fa]">
-      <div className="flex text-black flex-col max-w-[1140px] justify-start w-full gap-5">
-        <p>Featured</p>
-        <span className="flex flex-row items-end">
-          <p className="text-2xl font-bold">Featured</p>
-          <p>Destination</p>
-        </span>
-        <div className="flex flex-row gap-6">
-          {featureData.map((feature, index) => (
-            <FeatureCard
-              key={index}
-              imageSrc={feature.imageSrc}
-              title={feature.title}
-              description={feature.description}
-            />
-          ))}
+      </div>
+
+      <div className="w-full flex justify-center bg-[#f8f9fa]">
+        <div className="flex text-black flex-col max-w-[1140px] justify-start w-full gap-5">
+          <p>Featured</p>
+          <span className="flex flex-row items-end">
+            <p className="text-2xl font-bold">Featured</p>
+            <p>Destination</p>
+          </span>
+          <div className="flex flex-row gap-6">
+            {featureData.map((feature, index) => (
+              <FeatureCard
+                key={index}
+                imageSrc={feature.imageSrc}
+                title={feature.title}
+                description={feature.description}
+              />
+            ))}
+          </div>
         </div>
       </div>
-    </div>
 
-      
+      <div className='flex flex-col justify-center items-center py-20'>
+        <div className='max-w-[1140px] w-full'>
+          <div className='w-full'>
+            <p className='text-black/55'>Special Offers</p>
+            <span className='flex text-2xl gap-2'><p className='font-bold'>Top</p>Tour Packages</span> 
+          </div>
+        </div>
+        <div className=''>
+          <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-[1400px]'>
+          {toursCardData?.map((tour, index) => (
+              <TourCard
+                key={index}
+                title={tour.title}
+                price={tour.price}
+                hashtags={tour.hashtags}
+                duration={tour.duration}
+                imageSrc={tour.imageSrc}
+                rating={tour.rating}
+                description={tour.description}
+                numOfShare={tour.numOfShare}
+              />
+            ))}
+          </div>
+        </div>
+
+      </div>
 
       <div>
         <WhyChooseUs
