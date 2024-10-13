@@ -12,3 +12,31 @@
   /* background-attachment: fixed; */
 }
 
+.homebg1{
+  background-image: url('../public/homeBanner.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  
+}
+
+.homebg2 {
+  position: relative;
+  z-index: 1;
+}
+
+.homebg2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('../public/homeBg2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0.6; 
+  z-index: -1;
+}
+

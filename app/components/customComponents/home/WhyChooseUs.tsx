@@ -6,7 +6,7 @@ import { WhyChooseUsProps } from '@/types/types';
 
 const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ title, description, buttonText, onButtonClick }) => {
   return (
-    <div className="flex flex-col justify-center items-start p-6 bg-white text-left space-y-4">
+    <div className="flex flex-col justify-center items-start bg-white text-left space-y-2 sm:space-y-4">
       <h3 className="text-gray-500">Best travelers,</h3>
       <h2 className="text-3xl font-bold">
         <span className="text-black">Why </span>{title}

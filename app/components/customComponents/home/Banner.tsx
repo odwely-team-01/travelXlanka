@@ -45,8 +45,8 @@ const Banner: React.FC<BannerProps> = ({
   }, [customers, places, hotels, unseenPlaces]);
 
   return (
-    <div className="relative h-screen bg-cover bg-center text-white" style={{ backgroundImage: `url('/homeBanner.jpg')` }}>
-      <div className="absolute inset-0 bg-black opacity-10"></div>
+    <div className="relative  bg-cover bg-center " >
+      <div className="absolute inset-0 "></div>
       <div className="relative flex flex-col items-center justify-center h-full text-center">
         <h1 className="text-4xl md:text-6xl font-bold">{title}</h1>
         <p className="mt-4 w-full text-lg md:text-xl px-6">{description}</p>
