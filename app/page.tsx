@@ -14,11 +14,7 @@ import HomeHeroBanner from './components/customComponents/home/HomeHeroBanner';
 import Testimony from './components/customComponents/home/Testimony';
 import FeatureCarousel from './components/customComponents/home/FeatureCarousel';
 
-
-
 export default function Home() {
-
-
   return (
     <>
       <div className="flex w-full flex-col items-center justify-center "></div>
@@ -54,18 +50,19 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col justify-center bg-[#f8f9fa] overflow-hidden">
-        <div className="flex text-black flex-col max-w-[1140px] justify-start w-fit gap-5 ">
-          <p>Featured</p>
-          <span className="flex flex-row items-end">
-            <p className="text-2xl font-bold">Featured</p>
-            <p>Destination</p>
-          </span>
-          
+      <div className="w-full flex flex-col justify-center items-start sm:items-center bg-[#f8f9fa] overflow-hidden px-4">
+        <div className="w-full xl:w-[1140px]">
+          <div className="flex text-black flex-col w-full justify-start gap-5">
+            <span className="flex flex-row items-end gap-3">
+              <p className="text-2xl font-bold">Featured</p>
+              <p>Destination</p>
+            </span>
+          </div>
         </div>
+
         <div className="flex flex-row">
           <FeatureCarousel />
-          </div>
+        </div>
       </div>
 
       <div className="flex flex-col justify-center items-center py-20">

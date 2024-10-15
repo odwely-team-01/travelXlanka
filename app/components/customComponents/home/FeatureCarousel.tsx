@@ -31,11 +31,11 @@ const FeatureCarousel: React.FC = () => {
     <Carousel
       value={DestinationData}
       itemTemplate={itemTemplate}
-      numVisible={8}
+      numVisible={6}
       numScroll={2}
 
       circular
-      autoplayInterval={3000}
+      autoplayInterval={6000}
     />
   );
 };
