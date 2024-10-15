@@ -12,36 +12,12 @@ import { toursCardData } from './lib/constants';
 import TourCard from './components/customComponents/tour/TourCard';
 import HomeHeroBanner from './components/customComponents/home/HomeHeroBanner';
 import Testimony from './components/customComponents/home/Testimony';
+import FeatureCarousel from './components/customComponents/home/FeatureCarousel';
 
-interface FeatureData {
-  imageSrc: string;
-  title: string;
-  description: string;
-}
+
 
 export default function Home() {
-  const featureData: FeatureData[] = [
-    {
-      imageSrc: '/feature/destination-1.jpg',
-      title: 'Galle, Light House',
-      description: 'Spiritual heart',
-    },
-    {
-      imageSrc: '/feature/destination-4.jpg',
-      title: 'Waligama',
-      description: 'Surfing paradise',
-    },
-    {
-      imageSrc: '/feature/destination-2.jpg',
-      title: 'GYala, National Park',
-      description: 'Unforgettable safari adventures',
-    },
-    {
-      imageSrc: '/feature/destination-3.jpg',
-      title: 'Kandy, Temple of tooth',
-      description: 'Spiritual heart',
-    },
-  ];
+
 
   return (
     <>
@@ -78,24 +54,18 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full flex justify-center bg-[#f8f9fa]">
-        <div className="flex text-black flex-col max-w-[1140px] justify-start w-full gap-5">
+      <div className="w-full flex flex-col justify-center bg-[#f8f9fa] overflow-hidden">
+        <div className="flex text-black flex-col max-w-[1140px] justify-start w-fit gap-5 ">
           <p>Featured</p>
           <span className="flex flex-row items-end">
             <p className="text-2xl font-bold">Featured</p>
             <p>Destination</p>
           </span>
-          <div className="flex flex-row gap-6">
-            {featureData.map((feature, index) => (
-              <FeatureCard
-                key={index}
-                imageSrc={feature.imageSrc}
-                title={feature.title}
-                description={feature.description}
-              />
-            ))}
-          </div>
+          
         </div>
+        <div className="flex flex-row">
+          <FeatureCarousel />
+          </div>
       </div>
 
       <div className="flex flex-col justify-center items-center py-20">
