@@ -8,15 +8,21 @@ import BannerBg from '@/public/homeBanner.jpg';
 import WhyChooseUs from './components/customComponents/home/WhyChooseUs';
 import HomeHeroCards from './components/customComponents/home/HomeHeroCards';
 import FeatureCard from './components/customComponents/home/FeatureCard';
-import { toursCardData } from './lib/constants';
+import { packagesData } from '@/app/data/PackagesData';
 import TourCard from './components/customComponents/tour/TourCard';
 import HomeHeroBanner from './components/customComponents/home/HomeHeroBanner';
 import Testimony from './components/customComponents/home/Testimony';
 import FeatureCarousel from './components/customComponents/home/FeatureCarousel';
-import { DestinationData } from './data/destinationData';
-import FeatureCardOwl from './components/customComponents/home/FeatureCardOwl';
+import { useRouter } from 'next/navigation';
+import Button from './components/customComponents/Button';
 
 export default function Home() {
+  const router = useRouter();
+
+  const handleNavigation = () => {
+    router.push('/tour');
+  };
+
   return (
     <>
       <div className="flex w-full flex-col items-center justify-center "></div>
@@ -52,53 +58,31 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col justify-center items-start sm:items-center bg-[#f8f9fa] overflow-hidden ">
-        
-          <div className="flex text-black flex-col w-full justify-start gap-5 max-w-[1140px]">
-            <span className="flex flex-row items-end gap-3">
-              <p className="text-2xl font-bold">Featured</p>
-              <p>Destination</p>
-            </span>
-            <div>
-            <FeatureCardOwl/>
-            </div>
+      <div className="w-full flex flex-col justify-center items-start sm:items-center bg-[#f8f9fa] overflow-hidden">
+        <div className="flex text-black flex-col w-full justify-start gap-5 max-w-[1140px] px-4">
+          <p className="text-black/50">Featured</p>
+          <span className="flex flex-row items-end gap-3 text-3xl md:text-4xl">
+            <p className="font-bold">Featured</p>
+            <p>Destination</p>
+          </span>
+          <div>
+            <FeatureCarousel />
           </div>
-        
-
-       <div className='w-full h-[700px]'>
-       {/* <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 py-10 justify-items-center">
-          {DestinationData.map((destination, index) => (
-            <FeatureCard
-              key={index}
-              imageSrc={destination.imageSrc}
-              title={destination.title}
-              description={destination.description}
-            />
-          ))}
-        </div> */}
-
-
-
-       
-        </div> 
-
-       
-
-       
+        </div>
       </div>
 
-      <div className="flex flex-col justify-center items-center py-20">
-        <div className="max-w-[1140px] w-full">
-          <div className="w-full">
-            <p className="text-black/55">Special Offers</p>
-            <span className="flex text-2xl gap-2">
+      <div className="flex flex-col justify-center items-center py-20 px-4 gap-5">
+        <div className="max-w-[1140px] w-full ">
+          <div className="w-full space-y-4">
+            <p className="text-black/50">Special Offers</p>
+            <span className="flex text-3xl md:text-4xl gap-3">
               <p className="font-bold">Top</p>Tour Packages
             </span>
           </div>
         </div>
         <div className="">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-[1400px]">
-            {toursCardData?.map((tour, index) => (
+          <div className="grid grid-cols-1  xsm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-6 lg:gap-10 max-w-[1400px]">
+            {packagesData?.map((tour, index) => (
               <TourCard
                 key={index}
                 title={tour.title}
@@ -111,6 +95,13 @@ export default function Home() {
                 numOfShare={tour.numOfShare}
               />
             ))}
+          </div>
+          <div className="w-full flex justify-end">
+            <Button
+              title="View All"
+              className="bg-[#4aa9c3] hover:bg-[#3a8ea5] duration-200 text-white mt-10"
+              onClick={handleNavigation}
+            />
           </div>
         </div>
       </div>

@@ -6,6 +6,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'xsm': '550px',
+      },
       fontWeight: {
         thin: 100,
         extralight: 200,

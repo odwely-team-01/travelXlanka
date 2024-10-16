@@ -1,42 +1,56 @@
-// components/customComponents/home/FeatureCarousel.tsx
-import React from 'react';
-import { Carousel } from 'primereact/carousel';
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 import { DestinationData } from '@/app/data/destinationData';
-import Image from 'next/image';
+import FeatureCard from './FeatureCard';
 
-interface DestinationData {
-  imageSrc: string;
-  title: string;
-  description: string;
-}
+const settings = {
+  dots: true,
+  infinite: true,
+  speed: 500,
+  slidesToShow: 4,
+  slidesToScroll: 1,
+  autoplay: true,              
+  autoplaySpeed: 3000, 
+  responsive: [
+    {
+      breakpoint: 1100,
+      settings: {
+        slidesToShow: 3,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 815,
+      settings: {
+        slidesToShow: 2,
+        slidesToScroll: 1,
+      },
+    },
+    {
+      breakpoint: 550,
+      settings: {
+        slidesToShow: 1,
+        slidesToScroll: 1,
+      },
+    },
+  ],
+};
 
 const FeatureCarousel: React.FC = () => {
-  const itemTemplate = (feature: DestinationData) => {
-    return (
-      <div className="w-full flex justify-center items-center">
-        <div className="feature-card flex flex-col w-full justify-center items-center">
-          <div>
-            <Image src={feature.imageSrc} alt={feature.title} width={300} height={300} />
-          </div>
-          <div>
-            <h3>{feature.title}</h3>
-            <p>{feature.description}</p>
-          </div>
-        </div>
-      </div>
-    );
-  };
-
   return (
-    <Carousel
-      value={DestinationData}
-      itemTemplate={itemTemplate}
-      numVisible={6}
-      numScroll={2}
-
-      circular
-      autoplayInterval={6000}
-    />
+    <div className='w-full py-10'>
+      <Slider {...settings}>
+        {DestinationData.map((destination, index) => (
+          <FeatureCard
+            key={index}
+            imageSrc={destination.imageSrc}
+            title={destination.title}
+            description={destination.description}
+          />
+        ))}
+      </Slider>
+    </div>
   );
 };
 
