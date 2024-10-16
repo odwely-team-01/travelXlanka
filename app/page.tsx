@@ -13,6 +13,8 @@ import TourCard from './components/customComponents/tour/TourCard';
 import HomeHeroBanner from './components/customComponents/home/HomeHeroBanner';
 import Testimony from './components/customComponents/home/Testimony';
 import FeatureCarousel from './components/customComponents/home/FeatureCarousel';
+import { DestinationData } from './data/destinationData';
+import FeatureCardOwl from './components/customComponents/home/FeatureCardOwl';
 
 export default function Home() {
   return (
@@ -50,19 +52,39 @@ export default function Home() {
         </div>
       </div>
 
-      <div className="w-full flex flex-col justify-center items-start sm:items-center bg-[#f8f9fa] overflow-hidden px-4">
-        <div className="w-full xl:w-[1140px]">
-          <div className="flex text-black flex-col w-full justify-start gap-5">
+      <div className="w-full flex flex-col justify-center items-start sm:items-center bg-[#f8f9fa] overflow-hidden ">
+        
+          <div className="flex text-black flex-col w-full justify-start gap-5 max-w-[1140px]">
             <span className="flex flex-row items-end gap-3">
               <p className="text-2xl font-bold">Featured</p>
               <p>Destination</p>
             </span>
+            <div>
+            <FeatureCardOwl/>
+            </div>
           </div>
-        </div>
+        
 
-        <div className="flex flex-row">
-          <FeatureCarousel />
-        </div>
+       <div className='w-full h-[700px]'>
+       {/* <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-8 py-10 justify-items-center">
+          {DestinationData.map((destination, index) => (
+            <FeatureCard
+              key={index}
+              imageSrc={destination.imageSrc}
+              title={destination.title}
+              description={destination.description}
+            />
+          ))}
+        </div> */}
+
+
+
+       
+        </div> 
+
+       
+
+       
       </div>
 
       <div className="flex flex-col justify-center items-center py-20">

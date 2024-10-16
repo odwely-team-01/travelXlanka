@@ -5,6 +5,10 @@ import { Poppins } from 'next/font/google';
 import Footer from './components/customComponents/Footer';
 import Navbar from './components/customComponents/Navbar';
 
+import 'slick-carousel/slick/slick.css'; // Import slick-carousel CSS
+import 'slick-carousel/slick/slick-theme.css'; // Import slick-carousel theme CSS
+import './globals.css';
+
 
 const poppins = Poppins({
   subsets: ['latin'],

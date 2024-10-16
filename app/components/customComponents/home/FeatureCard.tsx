@@ -10,12 +10,12 @@ interface FeatureCardProps {
 
 const FeatureCard: React.FC<FeatureCardProps> = ({ imageSrc, title, description }) => {
   return (
-    <div className='flex flex-col gap-2 border'>
+    <div className='flex flex-col gap-2 items-center'>
       <Image
         src={imageSrc}
         alt={title}
-        width={300}
-        height={300}
+        width={260}
+        height={260}
         className='object-cover'
       />
       <span className='flex flex-col px-4'>
