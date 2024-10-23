@@ -5,7 +5,7 @@ import { DestinationData } from '@/app/data/destinationData';
 import FeatureCard from './FeatureCard';
 
 const settings = {
-  dots: true,
+  dots: false,
   infinite: true,
   speed: 500,
   slidesToShow: 4,

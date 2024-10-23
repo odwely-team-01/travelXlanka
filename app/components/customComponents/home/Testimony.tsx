@@ -1,40 +1,20 @@
 import React from 'react';
 import TestimonyCard from './TestimonyCard';
-import profile1 from "../../../../public/testimony/person_1.jpg"
+import TestimonyCarousel from './TestimonyCard';
+import { testimonies } from '../../../data/testimonyData';
 
 const Testimony = () => {
-const testimonies = [
-
-  
-  {
-    imageUrl: "/testimony/person_3.jpg",
-    quote:
-      "Travel Nexus Ceylon elevated my journey. Effortless planning, real-time guidance – the perfect companion for an amazing travel experience.",
-    name: "Akash Patel",
-    position: "Guest from India",
-  },
-];
-
-
   return (
-    <div className="flex flex-col justify-center sm:justify-start space-y-2 sm:space-y-4">
+    <div className="flex flex-col justify-center sm:justify-start space-y-2 sm:space-y-4 overflow-hidden">
       <p>Testimony</p>
-      <span className="flex gap-2 text-xs sm:text-2xl">
+      <span className="flex gap-2 text-sm md:text-2xl">
         <p className="font-bold">Our</p>
         <p>Guests Says</p>
       </span>
 
       {/* Render the testimony cards */}
-      <div className="carousel-testimony owl-carousel">
-        {testimonies.map((testimony, index) => (
-          <TestimonyCard
-            key={index}
-            imageUrl={testimony.imageUrl}
-            quote={testimony.quote}
-            name={testimony.name}
-            position={testimony.position}
-          />
-        ))}
+      <div className="w-[620px] md:w-[550px] lg:w-[600px]">
+        <TestimonyCarousel testimonies={testimonies} />
       </div>
     </div>
   );

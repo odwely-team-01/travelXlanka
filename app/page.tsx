@@ -107,7 +107,7 @@ export default function Home() {
       </div>
 
       <div className="flex flex-col justify-center items-center homebg2">
-        <div className="flex justify-center items-center  max-w-[1140px] sm:h-[400px] md:xl:h-[500px] 2xl:h-[600px]">
+        <div className="flex justify-center items-center  max-w-[1140px] h-[450px] sm:h-[400px] md:xl:h-[500px] 2xl:h-[600px]">
           <Banner
             title="We love Sri Lanka"
             description="Embracing the Heart of Serendipity: Our Enduring Love for Sri Lanka, Where Rich Heritage, Natural Splendor, and Unity Flourish in Harmony!"
@@ -115,14 +115,13 @@ export default function Home() {
             places={200}
             hotels={2000}
             unseenPlaces={50}
-            // backgroundImage={BannerBg}
           />
         </div>
       </div>
 
       <div className="flex flex-col sm:flex-row justify-center px-4 py-4">
-        <div className="flex flex-col sm:flex-row justify-center items-center  max-w-[1140px] sm:h-[400px] md:xl:h-[450px] 2xl:h-[550px] space-y-4 sm:space-y-0">
-          <div className="w-full sm:w-1/2">
+        <div className="flex flex-col md:flex-row justify-center items-center  max-w-[1140px] h-[450px] 2xl:h-[550px] space-y-4 sm:space-y-0 gap-4">
+          <div className="w-full md:w-1/2">
             <WhyChooseUs
               title="Choose Us"
               description="We offer exceptional experiences, personalized services, and unmatched expertise for all your travel needs."
@@ -130,7 +129,7 @@ export default function Home() {
               onButtonClick={() => alert('Button clicked!')}
             />
           </div>
-          <div className="w-full sm:w-1/2">
+          <div className="w-full md:w-1/2 overflow-hidden">
             <Testimony />
           </div>
         </div>

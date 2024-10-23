@@ -18,22 +18,26 @@ const Banner: React.FC<BannerProps> = ({
   hotels,
   unseenPlaces,
 }) => {
-  const [customerCount, setCustomerCount] = useState(0);
-  const [placesCount, setPlacesCount] = useState(0);
-  const [hotelsCount, setHotelsCount] = useState(0);
-  const [unseenPlacesCount, setUnseenPlacesCount] = useState(0);
+  const [customerCount, setCustomerCount] = useState<string>('0');
+  const [placesCount, setPlacesCount] = useState<string>('0');
+  const [hotelsCount, setHotelsCount] = useState<string>('0');
+  const [unseenPlacesCount, setUnseenPlacesCount] = useState<string>('0');
 
   useEffect(() => {
-    const increment = (start: number, end: number, setCount: React.Dispatch<React.SetStateAction<number>>) => {
+    const increment = (
+      start: number, 
+      end: number, 
+      setCount: React.Dispatch<React.SetStateAction<string>>
+    ) => {
       let current = start;
       const step = Math.ceil(end / 100);
       const interval = setInterval(() => {
         current += step;
         if (current >= end) {
-          setCount(end);
+          setCount(end.toLocaleString() + '+');
           clearInterval(interval);
         } else {
-          setCount(current);
+          setCount(current.toLocaleString());
         }
       }, 20);
     };
@@ -45,27 +49,27 @@ const Banner: React.FC<BannerProps> = ({
   }, [customers, places, hotels, unseenPlaces]);
 
   return (
-    <div className="relative  bg-cover bg-center " >
-      <div className="absolute inset-0 "></div>
+    <div className="relative bg-cover bg-center">
+      <div className="absolute inset-0"></div>
       <div className="relative flex flex-col items-center justify-center h-full text-center">
-        <h1 className="text-4xl md:text-6xl font-bold">{title}</h1>
-        <p className="mt-4 w-full text-lg md:text-xl px-6">{description}</p>
-        <div className="flex flex-col lg:flex-row justify-center mt-10 space-y-10 lg:space-y-0 lg:space-x-10">
+        <h1 className="text-3xl md:text-4xl xl:text-5xl">{title}</h1>
+        <p className="mt-4 w-full text-sm sm:text-base px-6">{description}</p>
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 pt-6">
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-5xl font-bold">{customerCount.toLocaleString()}</span>
-            <span className="mt-2">Happy Customers</span>
+            <span className="text-2xl md:text-4xl font-bold">{customerCount}</span>
+            <span className="mt-2 text-sm sm:text-base">Happy Customers</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-5xl font-bold">{placesCount.toLocaleString()}</span>
-            <span className="mt-2">Destination Places</span>
+            <span className="text-2xl md:text-4xl font-bold">{placesCount}</span>
+            <span className="mt-2 text-sm sm:text-base">Destination Places</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-5xl font-bold">{hotelsCount.toLocaleString()}</span>
-            <span className="mt-2">Hotels</span>
+            <span className="text-2xl md:text-4xl font-bold">{hotelsCount}</span>
+            <span className="mt-2 text-sm sm:text-base">Hotels</span>
           </div>
           <div className="flex flex-col items-center">
-            <span className="text-3xl md:text-5xl font-bold">{unseenPlacesCount.toLocaleString()}</span>
-            <span className="mt-2">Unseen Places to Travel</span>
+            <span className="text-2xl md:text-4xl font-bold">{unseenPlacesCount}</span>
+            <span className="mt-2 text-sm sm:text-base">Unseen Places to Travel</span>
           </div>
         </div>
       </div>

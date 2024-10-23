@@ -11,9 +11,9 @@ const WhyChooseUs: React.FC<WhyChooseUsProps> = ({ title, description, buttonTex
       <h2 className="text-3xl font-bold">
         <span className="text-black">Why </span>{title}
       </h2>
-      <p className="text-gray-700 leading-relaxed">{description}</p>
+      <p className="text-gray-700 leading-relaxed text-sm xl:text-base">{description}</p>
       <button
-        className="px-6 py-3 bg-white border border-red-400 text-red-400 rounded-full hover:bg-red-400 hover:text-white transition"
+        className="px-4 lg:px-4 py-1 lg:py-2 2xl:px-6 2xl:py-3 bg-white border border-red-400 text-red-400 rounded-full hover:bg-red-400 hover:text-white transition"
         onClick={onButtonClick}
       >
         {buttonText}

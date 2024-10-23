@@ -45,7 +45,7 @@ const TourCard = ({
   };
 
   return (
-    <div className="flex flex-col w-full gap-3 rounded-md shadow-md max-h-[550px]">
+    <div className="flex flex-col w-full gap-3 rounded-md shadow-md max-h-[650px]">
       <div>
         <Image
           src={imageSrc}
