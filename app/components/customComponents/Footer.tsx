@@ -13,7 +13,7 @@ export default function Footer() {
               {/* <Image src="/sample-logo.png" width={50} height={50} alt="Logo" /> */}
               <Link className="text-3xl font-bold" href={'/'}>Travel X Sri Lanka</Link>
             </div>
-            <p className="mt-6 text-sm leading-relaxed sm:text-base 2xl:text-xl">
+            <p className="mt-6 text-sm leading-relaxed sm:text-base 2xl:text-base">
               Explore Sri Lanka with ease. Plan, discover, and experience your
               journey effortlessly.
             </p>
@@ -27,7 +27,7 @@ export default function Footer() {
           {/* Customer Support Links */}
           <div className="md:w-1/3">
             <h3 className="mb-6 text-xl font-semibold">Customer Support</h3>
-            <ul className="space-y-2 text-sm sm:space-y-4 sm:text-base 2xl:text-xl">
+            <ul className="space-y-2 text-sm sm:space-y-4 sm:text-base">
               <li>
                 <a href="/about" className="hover:underline">
                   About
@@ -47,7 +47,7 @@ export default function Footer() {
           </div>
 
           {/* Contact Information */}
-          <div className="text-sm sm:text-base md:w-1/3 2xl:text-xl">
+          <div className="text-sm sm:text-base md:w-1/3 2xl:text-base">
             <h3 className="mb-6 text-xl font-semibold">Contact Details</h3>
             <p className="mb-4">24/5, 6th lane, Colombo 5, Sri Lanka</p>
             <p className="mb-4">+94 70 2132105</p>
@@ -56,7 +56,7 @@ export default function Footer() {
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-8 text-center text-sm sm:text-base 2xl:text-xl">
+        <div className="mt-8 text-center text-sm sm:text-base 2xl:text-">
           <p>© 2024 All Rights Reserved</p>
           <p className="mt-2">Solution Powered by Explore Tech Labs</p>
         </div>
