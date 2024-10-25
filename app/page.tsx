@@ -4,13 +4,13 @@ import React from 'react';
 import Banner from '@/app/components/customComponents/home/Banner';
 import WhyChooseUs from './components/customComponents/home/WhyChooseUs';
 import HomeHeroCards from './components/customComponents/home/HomeHeroCards';
-import { packagesData } from '@/app/data/PackagesData';
 import TourCard from './components/customComponents/tour/TourCard';
 import HomeHeroBanner from './components/customComponents/home/HomeHeroBanner';
 import Testimony from './components/customComponents/home/Testimony';
 import FeatureCarousel from './components/customComponents/home/FeatureCarousel';
 import { useRouter } from 'next/navigation';
 import Button from './components/customComponents/Button';
+import { packagesData } from './data/PackagesData';
 
 export default function Home() {
   const router = useRouter();
