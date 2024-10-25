@@ -5,7 +5,6 @@ import React, { useState } from 'react';
 import { FaRegStar } from 'react-icons/fa6';
 import { FaStar } from 'react-icons/fa';
 import TourCard from '../components/customComponents/tour/TourCard';
-import { toursCardData } from '../lib/constants';
 import InputText from '../components/customComponents/tour/InputText';
 import DateInput from '../components/customComponents/tour/DateInput';
 import InputSelect from '../components/customComponents/tour/inputSelect';
@@ -13,6 +12,7 @@ import LocationSelect from '../components/customComponents/tour/inputSelect';
 import ButtonSection from '../components/customComponents/tour/ButtonSection';
 import RatingSection from '../components/customComponents/tour/RatingSection';
 import Pagination from '../components/customComponents/pagination/Pagination';
+import { packagesData } from '../data/PackagesData';
 
 function Tour() {
   const [selectedLocation, setSelectedLocation] = useState('');
@@ -79,7 +79,6 @@ function Tour() {
               />
               <DateInput placeholder="FROM DATE" />
               <DateInput placeholder="TO DATE" />
-
               <ButtonSection text="Search" />
             </div>
 
@@ -97,7 +96,7 @@ function Tour() {
           {/* right */}
           <div className="lg:col-span-3 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             {/* card sections here */}
-            {toursCardData?.map((tour, index) => (
+            {packagesData?.map((tour, index) => (
               <TourCard
                 key={index}
                 title={tour.title}

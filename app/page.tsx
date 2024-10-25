@@ -1,13 +1,9 @@
 'use client';
-// #f85959
 
 import React from 'react';
-import Image from 'next/image';
 import Banner from '@/app/components/customComponents/home/Banner';
-import BannerBg from '@/public/homeBanner.jpg';
 import WhyChooseUs from './components/customComponents/home/WhyChooseUs';
 import HomeHeroCards from './components/customComponents/home/HomeHeroCards';
-import FeatureCard from './components/customComponents/home/FeatureCard';
 import { packagesData } from '@/app/data/PackagesData';
 import TourCard from './components/customComponents/tour/TourCard';
 import HomeHeroBanner from './components/customComponents/home/HomeHeroBanner';
