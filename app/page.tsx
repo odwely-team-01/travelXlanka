@@ -10,7 +10,8 @@ import Testimony from './components/customComponents/home/Testimony';
 import FeatureCarousel from './components/customComponents/home/FeatureCarousel';
 import { useRouter } from 'next/navigation';
 import Button from './components/customComponents/Button';
-import { packagesData } from './data/PackagesData';
+import { packagesData } from './data/packagesData';
+
 
 export default function Home() {
   const router = useRouter();

@@ -12,7 +12,8 @@ import LocationSelect from '../components/customComponents/tour/inputSelect';
 import ButtonSection from '../components/customComponents/tour/ButtonSection';
 import RatingSection from '../components/customComponents/tour/RatingSection';
 import Pagination from '../components/customComponents/pagination/Pagination';
-import { packagesData } from '../data/PackagesData';
+import { packagesData } from '../data/packagesData';
+
 
 function Tour() {
   const [selectedLocation, setSelectedLocation] = useState('');
