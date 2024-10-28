@@ -1,22 +1,21 @@
+// Tour.js
 'use client';
-import Image from 'next/image';
-import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaRegStar } from 'react-icons/fa6';
-import { FaStar } from 'react-icons/fa';
+import { packagesData } from '../data/packagesData';
+import { guiderData } from '../data/guiderData'; // Import guider data
+import Link from 'next/link';
 import TourCard from '../components/customComponents/tour/TourCard';
 import InputText from '../components/customComponents/tour/InputText';
 import DateInput from '../components/customComponents/tour/DateInput';
-import InputSelect from '../components/customComponents/tour/inputSelect';
 import LocationSelect from '../components/customComponents/tour/inputSelect';
 import ButtonSection from '../components/customComponents/tour/ButtonSection';
-import RatingSection from '../components/customComponents/tour/RatingSection';
 import Pagination from '../components/customComponents/pagination/Pagination';
-import { packagesData } from '../data/packagesData';
-
+import GuiderCard from '../components/customComponents/tour/GuiderCard';
 
 function Tour() {
   const [selectedLocation, setSelectedLocation] = useState('');
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = 5;
 
   const locations = [
     { label: 'New York', value: 'new_york' },
@@ -26,47 +25,38 @@ function Tour() {
     { label: 'Miami', value: 'miami' },
   ];
 
-  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChange = (event:any ) => {
     setSelectedLocation(event.target.value);
   };
 
-  // pagination
-  const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = 5; // Total number of pages you want
-
-  const handlePageChange = (page: number) => {
+  const handlePageChange = (page :any) => {
     setCurrentPage(page);
   };
 
   return (
     <div className="flex flex-col">
-      {/* main secion with bg */}
-      <div className=" min-h-screen h-auto flex flex-col items-center justify-center tour-bg">
+      {/* Main Section with Background */}
+      <div className="min-h-screen h-auto flex flex-col items-center justify-center tour-bg">
         <div className="flex flex-col text-white gap-3">
           <div className="flex items-center justify-center gap-4">
             <Link className="text-xs md:text-sm font-normal border-b-2 border-white/30" href={'/'}>
               HOME
             </Link>
-            <Link
-              className="text-xs md:text-sm font-normal border-b-2 border-white/30"
-              href={'/tour'}
-            >
+            <Link className="text-xs md:text-sm font-normal border-b-2 border-white/30" href={'/tour'}>
               TOUR
             </Link>
           </div>
-          <h1 className="font-poppins text-4xl md:text-5xl xl:text-6xl font-bold ">
-            Destination
-          </h1>
+          <h1 className="font-poppins text-4xl md:text-5xl xl:text-6xl font-bold">Destination</h1>
         </div>
       </div>
 
-      {/* description card section */}
-      <div className='max-w-[1140px] w-full mx-auto flex items-center justify-center'>
-        <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 my-10 px-4 ">
-          {/* left */}
-          <div className="w-full flex flex-col gap-5 ">
-            {/* form section here */}
-            <div className="p-5 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
+      {/* Description Card Section */}
+      <div className="max-w-[1140px] w-full mx-auto flex items-center justify-center px-4 xl:px-0">
+        <div className="flex flex-col sm:flex-row gap-4 my-10 w-full">
+          {/* Left Section */}
+          <div className="sm:w-1/2 md:w-1/3 flex flex-col gap-5">
+            {/* Form Section */}
+            <div className="p-3 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
               <span className="uppercase md:text-lg">Find Destination</span>
               <InputText placeholder="Destination, City" />
               <LocationSelect
@@ -83,20 +73,16 @@ function Tour() {
               <ButtonSection text="Search" />
             </div>
 
-            {/* rating section */}
-            <div className="p-5 rounded-md bg-[#F8FAFF] flex flex-col gap-5">
-              <span className="uppercase md:text-lg">Start Rating</span>
-              <RatingSection />
-              <RatingSection />
-              <RatingSection />
-              <RatingSection />
-              <RatingSection />
+            {/* Guide Section */}
+            <div className="p-3 rounded-md bg-[#F8FAFF] sm:flex flex-col gap-2 hidden max-h-[calc(10*56px)] overflow-y-auto custom-scrollbar">
+              {guiderData.map((guider) => (
+                <GuiderCard key={guider.id} {...guider} />
+              ))}
             </div>
           </div>
 
-          {/* right */}
+          {/* Right Section */}
           <div className="lg:col-span-3 w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* card sections here */}
             {packagesData?.map((tour, index) => (
               <TourCard
                 key={index}
@@ -114,12 +100,18 @@ function Tour() {
         </div>
       </div>
 
+      {/* Pagination */}
       <div className="flex items-center justify-center w-full py-5">
-        <Pagination
-          totalPages={totalPages}
-          currentPage={currentPage}
-          onPageChange={handlePageChange}
-        />
+        <Pagination totalPages={totalPages} currentPage={currentPage} onPageChange={handlePageChange} />
+      </div>
+
+      {/* Mobile Guide Section */}
+      <div className="flex sm:hidden p-4 overflow-x-auto gap-5 snap-x snap-mandatory">
+        {guiderData.map((guider) => (
+          <div key={guider.id} className="flex-shrink-0 w-full snap-center">
+            <GuiderCard {...guider} />
+          </div>
+        ))}
       </div>
     </div>
   );

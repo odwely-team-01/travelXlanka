@@ -1,32 +1,30 @@
 'use client';
 import React, { useState } from 'react';
+import { PiStarThin } from "react-icons/pi"; // Import your star icon
+import { RiStarSFill } from "react-icons/ri";
+import { RiStarHalfFill } from "react-icons/ri";
+import { RiStarLine } from "react-icons/ri";
+
 
 const RatingSection: React.FC = () => {
-  const [isChecked, setIsChecked] = useState(false);
+  const [rating, setRating] = useState(0); // State to store the current rating
 
-  // Handler function to toggle checkbox state
-  const handleCheckboxChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setIsChecked(event.target.checked);
+  // Handler to set the rating based on star click
+  const handleStarClick = (index: number) => {
+    setRating(index + 1);
   };
 
   return (
     <div className="flex items-center gap-5">
-      <input
-        id="red-checkbox"
-        type="checkbox"
-        checked={isChecked}
-        onChange={handleCheckboxChange}
-        className="w-4 h-4 bg-gray-100 border-gray-300 rounded"
-      />
-
-      <div className="flex items-center gap-3">
-        {[...Array(6)].map((_, index) => (
-          <div
+      <div className="flex items-center gap-1">
+        {[...Array(5)].map((_, index) => (
+          <RiStarSFill
             key={index}
-            className={`h-3 w-3 rounded-sm border border-[#F85959] ${
-              isChecked ? 'bg-[#F85959]' : 'bg-transparent'
+            onClick={() => handleStarClick(index)}
+            className={`cursor-pointer text-xs ${
+              index < rating ? 'text-[#F1ED00]' : 'text-gray-400 '
             }`}
-          ></div>
+          />
         ))}
       </div>
     </div>
