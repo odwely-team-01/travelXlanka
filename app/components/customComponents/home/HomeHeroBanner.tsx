@@ -9,7 +9,7 @@ const HomeHeroBanner = () => {
         <p>where you feel most alive...</p>
       </span>
       <p>Find great places to travel</p>
-      <div className="w-full">
+      <div className="w-full overflow-hidden">
         <SearchBar />
       </div>
     </div>

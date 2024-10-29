@@ -9,7 +9,7 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center bg-white shadow-md md:w-4/5">
+    <div className="flex items-center bg-white shadow-md md:w-4/5 overflow-hidden">
       <input
         type="text"
         placeholder="Search cities"
