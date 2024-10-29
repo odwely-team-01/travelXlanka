@@ -24,7 +24,7 @@ export default function Home() {
     <div className='flex flex-col overflow-hidden'>
       
 
-      <div className="flex w-full flex-col items-center justify-center h-screen homebg1 px-4">
+      <div className="flex w-full flex-col items-center justify-center h-screen homebg1 px-4 overflow-hidden">
         <div className="flex justify-center items-center  max-w-[1140px] w-full">
           <HomeHeroBanner />
         </div>

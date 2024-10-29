@@ -9,7 +9,7 @@ const SearchBar: React.FC = () => {
   };
 
   return (
-    <div className="flex items-center bg-white  shadow-md w-full md:w-4/5">
+    <div className="flex items-center bg-white shadow-md md:w-4/5">
       <input
         type="text"
         placeholder="Search cities"
@@ -19,7 +19,7 @@ const SearchBar: React.FC = () => {
       />
       <button
         onClick={handleSearch}
-        className="bg-red-500 text-white px-7 md:px-10 py-3 md:py-5 font-medium hover:bg-red-600 transition-all"
+        className="bg-red-500 text-white px-2 md:px-10 py-3 md:py-5 font-medium hover:bg-red-600 transition-all"
       >
         Search
       </button>
