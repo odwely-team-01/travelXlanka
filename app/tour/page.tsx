@@ -76,7 +76,9 @@ function Tour() {
             {/* Guide Section */}
             <div className="p-3 rounded-md bg-[#F8FAFF] sm:flex flex-col gap-2 hidden max-h-[calc(10*56px)] overflow-y-auto custom-scrollbar">
               {guiderData.map((guider) => (
-                <GuiderCard key={guider.id} {...guider} />
+                 <Link key={guider.id} href={`/guider`} passHref>
+                 <GuiderCard {...guider} />
+               </Link>
               ))}
             </div>
           </div>
@@ -109,7 +111,9 @@ function Tour() {
       <div className="flex sm:hidden p-4 overflow-x-auto gap-5 snap-x snap-mandatory">
         {guiderData.map((guider) => (
           <div key={guider.id} className="flex-shrink-0 w-full snap-center">
-            <GuiderCard {...guider} />
+            <Link href={`/guider`} passHref>
+              <GuiderCard {...guider} />
+            </Link>
           </div>
         ))}
       </div>

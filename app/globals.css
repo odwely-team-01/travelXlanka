@@ -15,6 +15,15 @@
   /* background-attachment: fixed; */
 }
 
+.guider-bg{
+  background-image: url('../public/contact-us/bg_5.webp');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  /* background-attachment: fixed; */
+  filter: blur(2px);
+}
+
 .homebg1{
   background-image: url('../public/homeBanner.jpg');
   background-position: center;
